@@ -49,6 +49,7 @@ dependencies {
 
 tasks.withType(Test) {
     useJUnitPlatform()
+    systemProperties(System.getProperties())
 
     testLogging {
         lifecycle {
@@ -63,6 +64,7 @@ task android_test(type: Test) {
         includeTags("android")
     }
 }
+
 task ios_test(type: Test) {
     useJUnitPlatform {
         includeTags("ios")
